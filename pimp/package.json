@@ -1,37 +1,33 @@
 {
-  "name": "react-app-name",
+  "name": "PIMp",
   "version": "0.0.1",
-  "description": "react boilerplate",
-  "main": "src/js/app.js",
+  "description": "Personal Information Manager Project",
+  "main": "src/js/App.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack"
   },
-  "homepage": "",
-  "repository": "",
-  "keywords": [
-    "react",
-    "webpack",
-    "react native",
-    "react starter",
-    "react boilerplate"
-  ],
-  "author": "Tollef Jørgensen",
-  "license": "MIT",
+  "repository": "https://github.com/IT2810/it2810-webutvikling-h17-prosjekt-3-group-42",
+  "author": "IT2810-Group42-H2017",
   "dependencies": {
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel-core": "*",
+    "babel-eslint": "^8.0.1",
     "babel-loader": "*",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
     "css-loader": "*",
+    "eslint": "^4.7.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "*",
     "html-webpack-plugin": "*",
     "node-sass": "*",
-    "prop-types": "^15.6.0",
     "sass-loader": "*",
     "webpack": "*"
   }
