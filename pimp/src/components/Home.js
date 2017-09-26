@@ -9,14 +9,14 @@ const page = {
 };
 
 class Home extends Component {
-	render() {
-		return (
-			<div>
-				<h1>{pageTitle(page)}!</h1>
-				<h3>{page.subTitle}</h3>
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <h1>{pageTitle(page)}!</h1>
+        <h3>{page.subTitle}</h3>
+      </div>
+    )
+  }
 }
 
 export default Home;
