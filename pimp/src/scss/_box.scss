@@ -1,0 +1,9 @@
+.box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid black;
+  padding: 10px 10px;
+  width: 100px;
+  height: 100px;
+}

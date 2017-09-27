@@ -1,7 +1,13 @@
 body{
-  background: linear-gradient(to left, purple, pink);
+  background: $wet-asphalt;
   color: #ffffff;
   display: flex;
   justify-content: center;
   font-family: helvetica;
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+

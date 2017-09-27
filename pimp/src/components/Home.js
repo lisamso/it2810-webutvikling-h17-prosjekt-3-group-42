@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import PropTypes from 'prop-types'; // ES6
+import Box from './Box';
 
 const pageTitle = page => `Welcome to ${page.title}`;
 
@@ -14,6 +15,9 @@ class Home extends Component {
       <div>
         <h1>{pageTitle(page)}!</h1>
         <h3>{page.subTitle}</h3>
+        <div className='container'>
+          <Box name='Notes' obj='hei'/>
+        </div>
       </div>
     )
   }
