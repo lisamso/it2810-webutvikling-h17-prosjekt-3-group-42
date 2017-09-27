@@ -5,16 +5,20 @@ class Note extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name: props.name,
-      obj: props.obj,
-    };
+      title: props.title,
+      text: props.text,
+      createdAt: props.createdAt,
+    }
   }
-
   render() {
     return (
-      <div className='box'>
-        <h2>{ this.props.name }</h2>
-        <p>{ this.props.obj }</p>
+      <div className='note'>
+        <h2>{this.state.title}</h2>
+        <p>{`> ${this.state.text}`}</p>
+        <div id='created-at'>
+          <hr/>
+          <p>{this.state.createdAt}</p>
+        </div>
       </div>
     )
   }
@@ -22,7 +26,8 @@ class Note extends Component {
 
 Note.propTypes = {
   title: PropTypes.string,
-  somemore: PropTypes.object,
+  text: PropTypes.string,
+  createdAt: PropTypes.string,
 };
 
 export default Note;

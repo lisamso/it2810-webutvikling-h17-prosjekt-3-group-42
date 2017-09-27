@@ -1,9 +1,89 @@
-.box {
+// using one highlight color in case of change
+$highlight: $clouds; 
+// same for bg color
+$bg_col: $wet-asphalt;
+// a common border size
+$border_size: 5px;
+$margin_size: 10px;
+
+#Notes{
+  width: 50%;
+}
+
+@mixin border_around_box {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: 2px solid black;
-  padding: 10px 10px;
-  width: 100px;
-  height: 100px;
+  margin: $margin_size;
 }
+
+.box {
+  @include border_around_box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: $border_size solid;
+  .box-item {
+    @include border_around_box;
+    border: 2px solid;
+    padding: $margin_size $margin_size;
+    h2 {
+      margin: 0 0;
+    }
+    hr{
+      height: 1px;
+      background-color: $highlight;
+    }
+  }
+  #box-title {
+    margin-top: $margin_size;
+    margin-bottom: $border_size;
+    text-align: center;
+    font-size: 32px;
+  }
+  hr{
+    width: 100%;
+    height: $border_size;
+    border: none;
+  }
+  p {
+  }
+  #created-at {
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
+#dotted-line hr {
+  border: 2px dotted;
+  border-style: none none dotted; 
+  color: #fff; 
+}
+
+#btn button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-top: $border_size;
+  font-size: 20px;
+  color: $bg_col;
+  font-weight: 500;
+}
+
+// create a custom box layout
+// with clouds as default color
+@mixin custom-box($col) {
+  border-color: $col;
+  #btn button{
+    background: $col;
+  }
+  hr {
+    background: $col;
+  }
+  #box-title {
+    color: $col;
+  }
+}
+
+.turquiose{ @include custom-box($turquoise); }
+.carrot{ @include custom-box($carrot); }

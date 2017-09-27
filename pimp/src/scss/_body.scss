@@ -1,13 +1,23 @@
+#root{
+  width: 80%;
+  margin: 0 auto;
+}
+
 body{
   background: $wet-asphalt;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
+  color: $clouds;
   font-family: helvetica;
+  padding: 0;
+}
+
+#welcome {
+  text-align: center;
 }
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
 }
 

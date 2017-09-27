@@ -28,6 +28,7 @@
     "extract-text-webpack-plugin": "*",
     "html-webpack-plugin": "*",
     "node-sass": "*",
+    "react-timestamp": "^4.2.1",
     "sass-loader": "*",
     "webpack": "*"
   }
