@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
 import Timestamp from 'react-timestamp';
-import Box from './Box'
+import Box from '../Box'
 import Note from './Note'
 
 class NoteContainer extends Component {
@@ -14,10 +14,8 @@ class NoteContainer extends Component {
   }
 
   componentDidMount(){
-    this.newNote("Koden er endret","Home.js er ryddet slik den bare importerer de forskjellige modulene vår applikasjon trenger.");
-    this.newNote("Ny klasse", "Den nye klassen NoteContainer.js er da listen som inneholder alle Notes. Denne Cointainer-klassen, og alle andre lignende klasser, importerer Box.js");
-    this.newNote("Forbedringer", "Dette fører til forbedringer ved at vi får ryddet i Home.js ved å legge all kode som har med feks Notes å gjøre i NoteContainer (listeners, newNote, form til å lage nye notes etc). Hver enkelt modul kan da ha en lignende klasse som importerer Box.js, for en lesbar, parallellisebar, og ekspanderbar kodebase.");
-    this.newNote("God helg!", "(plz godkjenn pull-requesten kthxbye)");
+    this.newNote("Note","Example note");
+    this.newNote("Note 2", "Example note");
   }
 
   newNote(note_title, note_text){

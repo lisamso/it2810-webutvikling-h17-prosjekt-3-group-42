@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NoteContainer from './NoteContainer';
+import NoteContainer from './Note/NoteContainer';
 
 const pageTitle = page => `Welcome to ${page.title}`;
 
