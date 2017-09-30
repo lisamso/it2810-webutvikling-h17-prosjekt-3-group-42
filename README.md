@@ -1,10 +1,11 @@
 # PIMp
 ```
-Personal Information Manager Project
+Personal Information Manager (pro)
 ```
 
 ## Get started
 ```
+$ npm install -g webpack webpack-dev-server
 $ cd pimp
 $ npm start
 ```
