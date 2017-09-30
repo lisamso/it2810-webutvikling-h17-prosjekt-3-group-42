@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteContainer from './Note/NoteContainer';
+import Clock from './Clock';
 
 const pageTitle = page => `Welcome to ${page.title}`;
 
@@ -21,6 +22,7 @@ class Home extends Component {
           <h1>{pageTitle(page)}!</h1>
           <p>{page.subTitle}</p>
         </div>
+        <Clock />
         <NoteContainer borderColor="carrot"/>
         <NoteContainer borderColor="turquoise"/>
         <NoteContainer borderColor="emerald"/>
