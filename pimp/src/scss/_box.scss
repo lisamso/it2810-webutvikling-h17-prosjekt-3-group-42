@@ -85,5 +85,7 @@ $margin_size: 10px;
   }
 }
 
-.turquiose{ @include custom-box($turquoise); }
+.turquoise{ @include custom-box($turquoise); }
 .carrot{ @include custom-box($carrot); }
+.emerald{ @include  custom-box($emerald); }
+.sun-flower{ @include custom-box($sun-flower); }

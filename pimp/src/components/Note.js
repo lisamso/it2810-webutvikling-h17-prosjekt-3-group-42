@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 
 class Note extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       title: props.title,
       text: props.text,

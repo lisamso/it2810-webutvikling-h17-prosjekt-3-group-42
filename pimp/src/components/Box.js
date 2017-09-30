@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 
 class Box extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       name: props.name,
       obj: props.obj,
