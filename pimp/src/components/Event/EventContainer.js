@@ -39,6 +39,9 @@ class EventContainer extends Component {
   }
 
   render() {
+    const eventBtn =
+      <button onClick={this.addNew}>New event</button>;
+
     return (
       <div className="container">
         <div className="container-item" id="Events">
@@ -49,8 +52,7 @@ class EventContainer extends Component {
               <div className='box-item'
                 key={idx}>{n}</div>
             )}
-            button={"New event"}
-            onClick={this.addNew}
+            button={eventBtn}
           />
         </div>
       </div>

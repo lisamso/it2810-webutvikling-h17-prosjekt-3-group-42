@@ -135,6 +135,14 @@ input {
 		}
 	}
 }
+
+input:required {
+  box-shadow:none;
+}
+input:invalid {
+  box-shadow:none;
+}
+
 @mixin bottomBar {
   content: '';
   height: 2px;
