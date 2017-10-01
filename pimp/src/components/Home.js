@@ -23,10 +23,10 @@ class Home extends Component {
           <p>{page.subTitle}</p>
         </div>
         <Clock />
-        <NoteContainer borderColor="carrot"/>
-        <NoteContainer borderColor="turquoise"/>
-        <NoteContainer borderColor="emerald"/>
-        <NoteContainer borderColor="sun-flower"/>
+        <div className="container">
+          <NoteContainer borderColor="carrot"/>
+          <NoteContainer borderColor="emerald"/>
+        </div>
       </div>
     )
   }

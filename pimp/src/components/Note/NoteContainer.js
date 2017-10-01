@@ -11,6 +11,7 @@ class NoteContainer extends Component {
       notes: [], // used to render all notes
     };
     this.newNote = this.newNote.bind(this);
+    this.btnClick = this.btnClick.bind(this);
   }
 
   componentDidMount(){
@@ -19,6 +20,7 @@ class NoteContainer extends Component {
   }
 
   newNote(note_title, note_text){
+    console.log("new note")
     let timeStamp = <Timestamp
       time={note_title.created_at}
       format='full'
@@ -35,20 +37,26 @@ class NoteContainer extends Component {
     }));
   }
 
+  btnClick() {
+    console.log("oops")
+    this.newNote("ny notat", "newnote");
+  }
+
   render() {
+    const noteBtn =
+      <button onClick={this.btnClick}>New note</button>
+
     return (
-      <div className='container'>
-        <div className='container-item' id='Notes'>
-          <Box
-            color={this.props.borderColor}
-            name='Your notes'
-            obj={this.state.notes.map((n,idx) =>
-              <div className='box-item'
-                key={idx}>{n}</div>
-            )}
-            button={'New note'}
-          />
-        </div>
+      <div className='container-item' id='Notes'>
+        <Box
+          color={this.props.borderColor}
+          name='Your notes'
+          obj={this.state.notes.map((n,idx) =>
+            <div className='box-item'
+              key={idx}>{n}</div>
+          )}
+          button={noteBtn}
+        />
       </div>
     )
   }

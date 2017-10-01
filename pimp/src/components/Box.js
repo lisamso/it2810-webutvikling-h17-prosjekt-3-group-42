@@ -7,12 +7,8 @@ class Box extends Component {
     this.state = {
       name: props.name,
       obj: props.obj,
-      button: props.button,
       color: props.color,
-      items: [],
-      item: props.item,
     };
-    this.addNew = this.addNew.bind(this);
   }
 
   addNew(){
@@ -30,10 +26,7 @@ class Box extends Component {
           { this.props.obj }
         </div>
         <div id='btn'>
-          { this.state.button && 
-              <button onClick={this.addNew}>
-                {this.state.button}
-              </button>}
+          {this.props.button}
         </div>
       </div>
     )
@@ -43,10 +36,8 @@ class Box extends Component {
 Box.propTypes = {
   name: PropTypes.string,
   obj: PropTypes.array,
-  button: PropTypes.string,
   color: PropTypes.string,
-  items: PropTypes.array,
-  item: PropTypes.object,
+  button: PropTypes.object,
 };
 
 export default Box;
