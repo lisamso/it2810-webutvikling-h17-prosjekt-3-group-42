@@ -11,9 +11,6 @@ class Box extends Component {
     };
   }
 
-  addNew(){
-    alert("new object");
-  }
 
   // TODO show dynamic objects from add new
 
