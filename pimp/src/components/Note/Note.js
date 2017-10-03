@@ -63,7 +63,6 @@ class Note extends Component {
             <input type='submit'/>
             <span className='bar'></span>
           </div>
-
           <div className='group'>
             <input
               type='text'

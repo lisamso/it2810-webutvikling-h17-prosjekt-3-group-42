@@ -1,4 +1,5 @@
 #root{
+  display: block;
   width: 70%;
   margin: 0 auto;
 }
@@ -21,9 +22,18 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  // flex-direction: column;
+  flex-direction: row;
 }
 
 .container-item {
-  min-width: 300px;
+  min-width: 100px;
+}
+
+#clock {
+  display: absolute;
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  font-size: 30px;
+  text-shadow: 0 1px $concrete;
 }

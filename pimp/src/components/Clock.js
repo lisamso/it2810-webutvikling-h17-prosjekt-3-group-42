@@ -44,12 +44,9 @@ class Clock extends Component {
   }
 
   render() {
+    const time = `It is ${this.getHours()}:${this.getMinutes()}:${this.getSeconds()}`;
     return (
-      <div>
-        <h3>It is {this.getHours() + ":" +
-      this.getMinutes() + ":" +
-      this.getSeconds()}.</h3>
-      </div>
+      <h3 id="clock">{time}</h3>
     );
   }
 }

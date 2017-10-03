@@ -43,18 +43,16 @@ class EventContainer extends Component {
       <button onClick={this.addNew}>New event</button>;
 
     return (
-      <div className="container">
-        <div className="container-item" id="Events">
-          <Box
-            color={this.props.borderColor}
-            name="Your upcoming events"
-            obj={this.state.events.map((n,idx) =>
-              <div className='box-item'
-                key={idx}>{n}</div>
-            )}
-            button={eventBtn}
-          />
-        </div>
+      <div className="container-item" id="Events">
+        <Box
+          color={this.props.borderColor}
+          name="Your upcoming events"
+          obj={this.state.events.map((n,idx) =>
+            <div className='box-item'
+              key={idx}>{n}</div>
+          )}
+          button={eventBtn}
+        />
       </div>
     )
   }
