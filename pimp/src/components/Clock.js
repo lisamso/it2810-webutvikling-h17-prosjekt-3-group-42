@@ -1,54 +1,36 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Textfit} from 'react-textfit';
+import PropTypes from 'prop-types'; // ES6
 
-class Clock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }
-
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  }
-
-  getHours() {
-    return this.state.date.getHours();
-  }
-
-  getMinutes() {
-    let minutes = this.state.date.getMinutes();
-    if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-    return minutes;
-  }
-
-  getSeconds() {
-    let sec = this.state.date.getSeconds();
-    if (sec < 10) {
-      sec = "0" + sec;
-    }
-    return sec;
-  }
-
+export class Clock extends Component {
   render() {
-    const time = `It is ${this.getHours()}:${this.getMinutes()}:${this.getSeconds()}`;
+    const weekday = this.props.weekday;
+    const month = this.props.month;
+    const hours = this.props.hours;
+    const minutes = this.props.minutes;
+    const seconds = this.props.seconds;
+    const day = this.props.day;
     return (
-      <h3 id="clock">{time}</h3>
-    );
+      <div id="clock">
+        <Textfit mode="single">
+          <p className="clock_element">{weekday}</p>
+        </Textfit>
+        <Textfit mode="single">
+          <p className="clock_element">{day} {month}</p>
+        </Textfit>
+        <Textfit mode="single">
+          <p className="clock_element">{hours}:{minutes}:{seconds}</p>
+        </Textfit>
+      </div>
+    )
   }
 }
 
-export default Clock;
+Clock.propTypes = {
+  weekday: PropTypes.string,
+  month: PropTypes.string,
+  hours: PropTypes.number,
+  minutes: PropTypes.number,
+  seconds: PropTypes.number,
+  day: PropTypes.number,
+}

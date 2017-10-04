@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import EventContainer from "./Event/EventContainer";
 import NoteContainer from './Note/NoteContainer';
-import Clock from './Clock';
+import ClockContainer from '../containers/ClockContainer';
 
 class Home extends Component {
   constructor(props){
     super(props);
   }
-
-
+  
+  
   render() {
     return (
       <div id="home">
-        <Clock />
+        <ClockContainer />
         <div className="container">
           <NoteContainer borderColor="carrot"/>
           <EventContainer borderColor="emerald"/>
@@ -23,3 +23,4 @@ class Home extends Component {
 }
 
 export default Home;
+

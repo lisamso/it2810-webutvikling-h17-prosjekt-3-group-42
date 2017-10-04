@@ -10,9 +10,10 @@
   "repository": "https://github.com/IT2810/it2810-webutvikling-h17-prosjekt-3-group-42",
   "author": "IT2810-Group42-H2017",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "*",
     "react-dom": "*",
-    "prop-types": "^15.6.0"
+    "react-textfit": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "*",
