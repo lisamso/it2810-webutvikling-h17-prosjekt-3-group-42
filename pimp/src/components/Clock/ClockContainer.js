@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {Clock} from '../components/Clock';
+import {Clock} from './Clock';
 
 const monthNames = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 const weekdays = [
-  "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+  "Monday", "Tuesday", "Wednesday",
+  "Thursday", "Friday", "Saturday", "Sunday"
 ];
 
 class ClockContainer extends Component {
@@ -52,7 +53,7 @@ class ClockContainer extends Component {
     if (minutes < 10) {
       minutes = "0" + minutes;
     }
-    return minutes;
+    return minutes.toString();
   }
   
   getSeconds() {
@@ -60,7 +61,7 @@ class ClockContainer extends Component {
     if (sec < 10) {
       sec = "0" + sec;
     }
-    return sec;
+    return sec.toString();
   }
   
   render() {

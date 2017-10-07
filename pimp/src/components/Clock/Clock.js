@@ -30,7 +30,7 @@ Clock.propTypes = {
   weekday: PropTypes.string,
   month: PropTypes.string,
   hours: PropTypes.number,
-  minutes: PropTypes.number,
-  seconds: PropTypes.number,
+  minutes: PropTypes.string,
+  seconds: PropTypes.string,
   day: PropTypes.number,
 }

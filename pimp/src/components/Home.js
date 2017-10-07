@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EventContainer from "./Event/EventContainer";
 import NoteContainer from './Note/NoteContainer';
-import ClockContainer from '../containers/ClockContainer';
+import ClockContainer from './Clock/ClockContainer';
 
 class Home extends Component {
   constructor(props){
