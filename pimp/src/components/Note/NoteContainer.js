@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
-import Timestamp from 'react-timestamp';
 import Box from '../Box'
 import Note from './Note'
 
@@ -8,53 +7,73 @@ class NoteContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      notes: [], // used to render all notes
+      notes: new Array(), // used to render all notes
     };
     this.newNote = this.newNote.bind(this);
     this.btnClick = this.btnClick.bind(this);
+    this.allNotes = this.allNotes.bind(this);
   }
 
   componentDidMount(){
-    this.newNote("Note","Example note");
-    this.newNote("Note 2", "Example note");
+    let LS = JSON.parse(
+      localStorage.getItem('notes'))
+    let fromStorage = new Array();
+    if (LS){
+      LS.map((note)=>{
+        if (note['text']){
+          let storageNote =
+            <Note
+              title={note['title']}
+              text={note['text']}
+              lastChanged={note['time']}
+            />;
+          fromStorage.push(storageNote)
+        }
+      })
+    }
+    else {
+      localStorage.setItem('notes',
+        JSON.stringify(fromStorage))
+    }
+    this.setState({ notes: fromStorage })
   }
 
-  newNote(note_title, note_text){
+  newNote(title='',text=''){
     console.log("new note")
-    let timeStamp = <Timestamp
-      time={note_title.created_at}
-      format='full'
-    />;
-
-    this.setState(prevState => ({
-      notes: [...prevState.notes,
+    let note =
         <Note
-          key={timeStamp}
-          title={note_title}
-          text={note_text}
-          createdAt={timeStamp}
-        />],
-    }));
+          title={title}
+          text={text}
+          createdAt='xD'
+        />;
+    let arr = this.state.notes
+    arr.push(note)
+    this.setState({ notes: arr })
   }
 
   btnClick() {
-    console.log("oops")
-    this.newNote("ny notat", "newnote");
+    console.log("button clicked")
+    this.newNote();
+  }
+
+  allNotes() {
+    return(
+      this.state.notes.map((n,idx) =>
+        <div className='box-item'
+          key={idx}>{n}</div>
+      ));
   }
 
   render() {
     const noteBtn =
-      <button onClick={this.btnClick}>New note</button>
+      <button onClick={this.btnClick}>New note</button>;
 
     return (
       <div className='container-item' id='Notes'>
         <Box
           color={this.props.borderColor}
           name='Your notes'
-          obj={this.state.notes.map((n,idx) =>
-            <div className='box-item'
-              key={idx}>{n}</div>
-          )}
+          obj={this.allNotes()}
           button={noteBtn}
         />
       </div>

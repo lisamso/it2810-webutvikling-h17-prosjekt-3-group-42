@@ -1,52 +1,88 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
+import {
+  removeNote,
+  timestampAt
+} from '../../helpers/helper';
 
 class Note extends Component {
-  constructor(props){
-    super(props);
+  constructor(props) {
+    super(props)
     this.state = {
       title: props.title,
       text: props.text,
-      createdAt: props.createdAt,
       titleFocused: false,
       textFocused: false,
+      lastChanged: props.lastChanged,
+      timestamp: null,
     }
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleTitleChange = this.handleTitleChange.bind(this)
+    this.handleTextChange = this.handleTextChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount(){
-    this.titleRef.focus();
+  componentDidMount() {
+    this.titleRef.focus()
+    this.setState({
+      timestamp: timestampAt(new Date())
+    })
+    // update the time every 10 seconds
+    this.timer = setInterval(()=>this.tick(),10000)
   }
 
-  handleTitleChange(e){
+  componentWillUnMount() {
+    clearInterval(this.timer)
+  }
+
+  tick() {
+    let editedTime = this.state.lastChanged
+    this.setState({
+      lastChanged: editedTime,
+      date: timestampAt(new Date())
+    })
+  }
+
+  handleTitleChange(e) {
     this.setState({
       title: e.target.value,
       titleFocused: true,
-      textFocused: false});
+      textFocused: false})
   }
 
-  handleTextChange(e){
+  handleTextChange(e) {
     this.setState({
       text: e.target.value,
       titleFocused: false,
-      textFocused: true});
+      textFocused: true})
   }
 
-  handleSubmit(e){
-    e.preventDefault();
+  handleSubmit(e) {
+    let editedAt = this.state.timestamp.props['time']
+    e.preventDefault()
     if (this.state.textFocused){
-      this.contentRef.blur();
+      this.contentRef.blur()
     }
     if (this.state.titleFocused){
-      this.contentRef.focus();
+      this.contentRef.focus()
     }
+    let newNote = {
+      'text': this.contentRef.value,
+      'title': this.titleRef.value,
+      'id': this.titleRef.value,
+      'time': editedAt
+    }
+    let LS = JSON.parse(
+      localStorage.getItem('notes'))
+    LS = removeNote(LS, this.titleRef.value)
+    LS.push(newNote)
+    localStorage.setItem('notes',
+      JSON.stringify(LS))
+    this.setState({ lastChanged: editedAt })
   }
 
 
   render() {
+
     return (
       <div className='note'>
         <form className='note-form'
@@ -59,6 +95,7 @@ class Note extends Component {
               ref={ref => this.titleRef = ref}
               placeholder="Title"
               onChange={this.handleTitleChange}
+              value={this.state.title}
             />
             <input type='submit'/>
             <span className='bar'></span>
@@ -71,10 +108,14 @@ class Note extends Component {
               ref={ref => this.contentRef = ref}
               placeholder="Content"
               onChange={this.handleTextChange}
+              value={this.state.text}
             />
             <span className='bar'></span>
           </div>
         </form>
+        <div id='created-at'>
+          <p>{timestampAt(this.state.lastChanged)}</p>
+        </div>
       </div>
     )
   }
@@ -83,9 +124,10 @@ class Note extends Component {
 Note.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
-  createdAt: PropTypes.object,
   titleFocused: PropTypes.bool,
   textFocused: PropTypes.bool,
-};
+  lastChanged: PropTypes.string,
+  timestamp: PropTypes.string,
+}
 
-export default Note;
+export default Note
