@@ -19,8 +19,6 @@ const Todo = ({todo, remove}) => {
 
 const List = ({todos, remove}) => {
   let allTodos = [];
-
-
   if(todos.length > 0) {
     allTodos = todos.map(todo => {
       return ( <Todo key = {todo.id} todo={todo} remove={remove} /> );
@@ -40,6 +38,7 @@ const List = ({todos, remove}) => {
 class TodoContainer extends Component {
   constructor(props) {
     super(props);
+    
 
     const localStorageData = localStorage.todos
       && JSON.parse(localStorage.todos);
@@ -113,19 +112,14 @@ class TodoContainer extends Component {
   }
 
   componentDidMount() {
-    localStorage.clear();
-    if (typeof(Storage) !== "undefined") {
-      if(!localStorage.todos) {
-        localStorage.todos = JSON.stringify(this.state.data);
-      }
-      if(!localStorage.count) {
-        localStorage.count = 0;
-      }
-
+    if(!localStorage.todos) {
+      localStorage.todos = JSON.stringify(this.state.data);
     }
+    if(!localStorage.count) {
+      localStorage.count = 0;
+    }
+
   }
-
-
 
   render() {
     const todoForm =
@@ -163,12 +157,11 @@ class TodoContainer extends Component {
         <Box
           color = {this.props.borderColor}
           name = 'Your Todo'
-          obj = {todoForm}
+          obj = {[todoForm]}
           button={addNewTodoButton} />
       </div>
     );
   }
-
 }
 
 Todo.propTypes = {

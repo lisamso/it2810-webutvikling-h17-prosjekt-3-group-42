@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
 import {
-  removeID,
+  removeId,
   timestampAt
 } from '../../helpers/helper';
 
@@ -73,7 +73,7 @@ class Note extends Component {
     }
     let LS = JSON.parse(
       localStorage.getItem('notes'))
-    LS = removeID(LS, this.titleRef.value)
+    LS = removeId(LS, this.titleRef.value)
     LS.push(newNote)
     localStorage.setItem('notes',
       JSON.stringify(LS))
