@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
 import {
-  removeNote,
+  removeID,
   timestampAt
 } from '../../helpers/helper';
 
@@ -22,7 +22,7 @@ class Note extends Component {
   }
 
   componentDidMount() {
-    this.titleRef.focus()
+    // this.titleRef.focus()
     this.setState({
       timestamp: timestampAt(new Date())
     })
@@ -73,7 +73,7 @@ class Note extends Component {
     }
     let LS = JSON.parse(
       localStorage.getItem('notes'))
-    LS = removeNote(LS, this.titleRef.value)
+    LS = removeID(LS, this.titleRef.value)
     LS.push(newNote)
     localStorage.setItem('notes',
       JSON.stringify(LS))
@@ -114,7 +114,7 @@ class Note extends Component {
           </div>
         </form>
         <div id='created-at'>
-          <p>{timestampAt(this.state.lastChanged)}</p>
+          {timestampAt(this.state.lastChanged)}
         </div>
       </div>
     )

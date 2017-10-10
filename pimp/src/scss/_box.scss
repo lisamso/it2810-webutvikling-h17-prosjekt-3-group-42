@@ -1,8 +1,5 @@
-// using one highlight color in case of change
 $highlight: $clouds; 
-// same for bg color
 $bg_col: $wet-asphalt;
-// a common border size
 $border_size: 5px;
 $margin_size: 10px;
 
@@ -52,10 +49,14 @@ $margin_size: 10px;
   }
   p {
   }
+  #delete {
+    position: absolute;
+    border: 2px solid white;
+    margin-bottom: -$margin_size;
+  }
   #created-at {
     font-size: 12px;
     text-align: right;
-    margin-bottom: -$margin_size;
   }
 }
 
@@ -70,6 +71,7 @@ $margin_size: 10px;
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 0;
   padding-top: $border_size;
   font-size: 20px;
   color: $bg_col;
@@ -98,69 +100,5 @@ $margin_size: 10px;
 
 .group {
 	position: relative;
-}
-
-@mixin easeAll {
-	transition: 0.2s ease all;
-	-moz-transition: 0.2s ease all;
-	-webkit-transition: 0.2s ease all;
-}
-
-input {
-  background: none;
-  margin-top: 5px;
-  color: $clouds;
-  width: 100%;
-	border: none;
-  &::placeholder {
-    color: $concrete;
-  }
-  &[type~='submit']{
-    display: none;
-  }
-  &[name~='title'] {
-    font-size: 18px;
-  }
-  &[name~='content'] {
-    font-size: 14px;
-  }
-	&:focus {
-		outline: none;
-		&~.bar {
-			&:before {
-				width: 50%;
-			}
-			&:after {
-				width: 50%;
-			}
-		}
-	}
-}
-
-input:required {
-  box-shadow:none;
-}
-input:invalid {
-  box-shadow:none;
-}
-
-@mixin bottomBar {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: $carrot;
-  @include easeAll;
-}
-.bar {
-	&:before {
-    @include bottomBar;
-		left: 50%;
-	}
-	&:after {
-    @include bottomBar;
-		right: 50%;
-	}
 }
 

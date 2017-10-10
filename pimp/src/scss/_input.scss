@@ -1,0 +1,63 @@
+@mixin easeAll {
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+input {
+  background: none;
+  margin-top: 5px;
+  color: $clouds;
+  width: 100%;
+	border: none;
+  &::placeholder {
+    color: $concrete;
+  }
+  &[type~='submit']{
+    display: none;
+  }
+  &[name~='title'] {
+    font-size: 18px;
+  }
+  &[name~='content'] {
+    font-size: 14px;
+  }
+	&:focus {
+		outline: none;
+		&~.bar {
+			&:before {
+				width: 50%;
+			}
+			&:after {
+				width: 50%;
+			}
+		}
+	}
+}
+
+input:required {
+  box-shadow:none;
+}
+input:invalid {
+  box-shadow:none;
+}
+
+@mixin bottomBar {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $carrot;
+  @include easeAll;
+}
+.bar {
+	&:before {
+    @include bottomBar;
+		left: 50%;
+	}
+	&:after {
+    @include bottomBar;
+		right: 50%;
+	}
+}
