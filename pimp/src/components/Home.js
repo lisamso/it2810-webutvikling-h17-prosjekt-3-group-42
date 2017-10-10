@@ -13,6 +13,7 @@ class Home extends Component {
     return (
       <div id="home">
         <ClockContainer />
+        <PimpCalendar/>
         <div className="container">
           <NoteContainer borderColor="carrot"/>
           <EventContainer borderColor="emerald"/>

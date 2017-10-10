@@ -41,7 +41,7 @@ class ClockContainer extends Component {
   
   getMonth() {
     const monthNumber = this.state.date.getMonth();
-    return monthNames[monthNumber - 1];
+    return monthNames[monthNumber];
   }
   
   getHours() {
