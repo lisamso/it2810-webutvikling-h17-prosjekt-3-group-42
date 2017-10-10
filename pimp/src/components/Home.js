@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventContainer from "./Event/EventContainer";
 import NoteContainer from './Note/NoteContainer';
+import TodoContainer from './Todo/TodoContainer';
 import ClockContainer from './Clock/ClockContainer';
 
 class Home extends Component {
@@ -17,6 +18,7 @@ class Home extends Component {
         <div className="container">
           <NoteContainer borderColor="carrot"/>
           <EventContainer borderColor="emerald"/>
+          <TodoContainer borderColor="turquoise"/>
         </div>
       </div>
     )
