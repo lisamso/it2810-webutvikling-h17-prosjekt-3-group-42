@@ -8,9 +8,29 @@ $margin_size: 10px;
 
 
 .button-add-new-todo {
+  align-content:center;
+  padding: auto;
+  width: 20px;
+  height: 20px;
   color: white;
   margin: auto;
   border-color: white;
   background-color: transparent;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+}
 
+#button-todo{
+  position: relative;
+  float: right;
+  display: inline-block;
+  bottom: 15px;
+}
+
+#button-todo::before{
+  content: "Done";
+  position: absolute;
+  display: inline-block;
+  width: 200%;
+  right: 100%;
 }

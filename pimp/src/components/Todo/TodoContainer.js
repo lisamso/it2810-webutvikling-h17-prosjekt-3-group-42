@@ -7,15 +7,17 @@ const Todo = ({todo, remove}) => {
     <div className='box-item'>
       {todo.value}
       <p></p>
-      <button className='button-add-new-todo'
-        onClick={()=> {
-          remove(todo.id)
-        }}>
-				Task done
-      </button>
+      <div id = "button-todo">
+        <button className='button-add-new-todo'
+          onClick={()=> {
+            remove(todo.id)
+          }}>
+        </button>
+      </div>
     </div>
   );
 };
+
 
 const List = ({todos, remove}) => {
   let allTodos = [];
