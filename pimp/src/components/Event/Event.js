@@ -7,7 +7,7 @@ class Event extends Component {
     this.state = {
       title: props.title,
       text: props.text,
-      createdAt: props.createdAt,
+      eventAt: props.eventAt,
     }
   }
   render() {
@@ -15,9 +15,9 @@ class Event extends Component {
       <div className='event'>
         <h2>{this.state.title}</h2>
         <p>{`> ${this.state.text}`}</p>
-        <div id='created-at'>
+        <div id='event-at'>
           <hr/>
-          <p>{this.state.createdAt}</p>
+          <p>The event is on {this.state.eventAt}</p>
         </div>
       </div>
     )
@@ -27,7 +27,7 @@ class Event extends Component {
 Event.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
-  createdAt: PropTypes.object,
+  eventAt: PropTypes.string
 };
 
 export default Event;

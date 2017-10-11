@@ -10,10 +10,13 @@
   "repository": "https://github.com/IT2810/it2810-webutvikling-h17-prosjekt-3-group-42",
   "author": "IT2810-Group42-H2017",
   "dependencies": {
+    "moment": "^2.18.1",
     "prop-types": "^15.6.0",
     "react": "*",
-    "react-calendar": "^2.1.0",
+    "react-datepicker": "^0.55.0",
     "react-dom": "*",
+    "react-modal": "^2.3.2",
+    "react-calendar": "^2.1.0",
     "react-textfit": "^1.0.1"
   },
   "devDependencies": {
