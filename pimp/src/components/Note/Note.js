@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 import {
   removeId,
   timestampAt
-} from '../../helpers/helper';
+} from '../../helper';
 
 class Note extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class Note extends Component {
       textFocused: false,
       lastChanged: props.lastChanged,
       timestamp: null,
-      saved: false,
     }
     this.handleTitleChange = this.handleTitleChange.bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
@@ -78,7 +77,7 @@ class Note extends Component {
     LS.push(newNote)
     localStorage.setItem('notes',
       JSON.stringify(LS))
-    this.setState({ lastChanged: editedAt, saved: true })
+    this.setState({ lastChanged: editedAt })
   }
 
 
@@ -114,10 +113,10 @@ class Note extends Component {
           </div>
         </form>
         <div id='created-at'>
-          {this.state.saved?(
-            timestampAt(this.state.lastChanged)
-          ):(
+          {this.state.lastChanged === "Press enter to save"?(
             this.state.lastChanged
+          ):(
+            timestampAt(this.state.lastChanged)
           )}
         </div>
       </div>

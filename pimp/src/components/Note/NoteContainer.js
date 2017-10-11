@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'; // ES6
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Box from '../Box'
 import Note from './Note'
 
@@ -12,9 +12,15 @@ class NoteContainer extends Component {
     this.newNote = this.newNote.bind(this);
     this.btnClick = this.btnClick.bind(this);
     this.allNotes = this.allNotes.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
+    this.updateNotes = this.updateNotes.bind(this);
   }
 
   componentDidMount(){
+    this.updateNotes()
+  }
+
+  updateNotes() {
     let LS = JSON.parse(
       localStorage.getItem('notes'))
     let fromStorage = new Array();
@@ -56,11 +62,27 @@ class NoteContainer extends Component {
     this.newNote();
   }
 
+  deleteNote(id) {
+    console.log(id)
+    var LS = JSON.parse(
+      localStorage.getItem('notes'))
+    console.log(LS)
+    LS = LS.filter((note => note['text']!=id))
+    console.log(LS)
+    this.updateNotes()
+    localStorage.setItem('notes', JSON.stringify(LS))
+  }
+
   allNotes() {
     return(
       this.state.notes.map((n,idx) =>
         <div className='box-item'
-          key={idx}>{n}</div>
+          key={idx}>
+          {n}
+          <button onClick={() => this.deleteNote(n.props['text'])}>
+            Delete noet!!
+          </button>
+        </div>
       ));
   }
 
