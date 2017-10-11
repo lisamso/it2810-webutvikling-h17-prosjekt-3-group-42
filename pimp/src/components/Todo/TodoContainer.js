@@ -38,13 +38,21 @@ const List = ({todos, remove}) => {
 class TodoContainer extends Component {
   constructor(props) {
     super(props);
-    
+
+    const introData = [
+      {
+        id: -1,
+        value: "Add new todos and come " +
+        "back any time later, I will save them for you!"
+      }
+    ];
+
 
     const localStorageData = localStorage.todos
       && JSON.parse(localStorage.todos);
 
     this.state = {
-      data: localStorageData,
+      data: localStorageData || introData,
       value: ''
     };
 
@@ -75,6 +83,7 @@ class TodoContainer extends Component {
     if (typeof(Storage) !== "undefined")
       localStorage.todos = JSON.stringify(this.state.data);
   }
+
   // Handler for å legge til ny todo
   addNewTodo(value) {
     let id;
@@ -111,6 +120,7 @@ class TodoContainer extends Component {
     });
   }
 
+
   componentDidMount() {
     if(!localStorage.todos) {
       localStorage.todos = JSON.stringify(this.state.data);
@@ -120,6 +130,8 @@ class TodoContainer extends Component {
     }
 
   }
+
+
 
   render() {
     const todoForm =
@@ -146,6 +158,7 @@ class TodoContainer extends Component {
         </div>
       </div>
 
+
     const addNewTodoButton = <button
       onClick={this.handleAddingNewTodo}
     >
@@ -157,11 +170,13 @@ class TodoContainer extends Component {
         <Box
           color = {this.props.borderColor}
           name = 'Your Todo'
+
           obj = {[todoForm]}
           button={addNewTodoButton} />
       </div>
     );
   }
+
 }
 
 Todo.propTypes = {
@@ -179,4 +194,6 @@ TodoContainer.propTypes = {
   borderColor: PropTypes.string
 };
 
+
 export default TodoContainer;
+
