@@ -44,7 +44,7 @@ class NoteContainer extends Component {
         <Note
           title={title}
           text={text}
-          createdAt='xD'
+          lastChanged="Press enter to save"
         />;
     let arr = this.state.notes
     arr.push(note)

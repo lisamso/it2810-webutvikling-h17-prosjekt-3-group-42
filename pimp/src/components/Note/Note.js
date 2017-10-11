@@ -15,6 +15,7 @@ class Note extends Component {
       textFocused: false,
       lastChanged: props.lastChanged,
       timestamp: null,
+      saved: false,
     }
     this.handleTitleChange = this.handleTitleChange.bind(this)
     this.handleTextChange = this.handleTextChange.bind(this)
@@ -77,12 +78,11 @@ class Note extends Component {
     LS.push(newNote)
     localStorage.setItem('notes',
       JSON.stringify(LS))
-    this.setState({ lastChanged: editedAt })
+    this.setState({ lastChanged: editedAt, saved: true })
   }
 
 
   render() {
-
     return (
       <div className='note'>
         <form className='note-form'
@@ -97,7 +97,7 @@ class Note extends Component {
               onChange={this.handleTitleChange}
               value={this.state.title}
             />
-            <input type='submit'/>
+            <input type='submit' value='submit'/>
             <span className='bar'></span>
           </div>
           <div className='group'>
@@ -114,7 +114,11 @@ class Note extends Component {
           </div>
         </form>
         <div id='created-at'>
-          {timestampAt(this.state.lastChanged)}
+          {this.state.saved?(
+            timestampAt(this.state.lastChanged)
+          ):(
+            this.state.lastChanged
+          )}
         </div>
       </div>
     )
