@@ -19,9 +19,9 @@ class CalendarContainer extends Component {
       let buttonDate = dateObject.getDate();
       let buttonMonth = dateObject.getMonth();
       if (buttonDate === date && buttonMonth === month) {
-        button.style.background = "cornflowerblue";
+        button.style.background = "#3498db";
       } else {
-        button.style.background = "buttonface";
+        button.style.background = "#ecf0f1";
       }
     }
   }
