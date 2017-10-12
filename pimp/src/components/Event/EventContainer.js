@@ -37,9 +37,14 @@ class EventContainer extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFromLS = this.updateFromLS.bind(this);
   }
 
   componentDidMount() {
+    this.updateFromLS();
+  }
+
+  updateFromLS() {
     let LS = JSON.parse(
       localStorage.getItem('events'));
     let fromStorage = [];
@@ -48,6 +53,7 @@ class EventContainer extends Component {
         if (event['title']){
           let storageEvent =
             <Event
+              id={event["id"]}
               key={
                 moment(
                   event['eventAt']
@@ -58,6 +64,7 @@ class EventContainer extends Component {
                 moment(
                   event['eventAt']
                 ).format("dddd, MMMM Do, HH:mm")}
+              update={this.updateFromLS}
             />;
           fromStorage.push(storageEvent)
         }
@@ -67,20 +74,21 @@ class EventContainer extends Component {
       localStorage.setItem('events',
         JSON.stringify(fromStorage))
     }
-    this.setState({ events: fromStorage })
+    this.setState({ events: fromStorage });
   }
 
   newEvent(event){
     this.setState(prevState => ({
       events: [...prevState.events,
         <Event
+          id={event["id"]}
           key={event["eventAt"].valueOf()}
           title={event["title"]}
           text={event["text"]}
           eventAt={event["eventAt"].format("dddd, MMMM Do, HH:mm")}
+          update={this.updateFromLS}
         />],
     }));
-    console.log(this.state.events)
   }
 
   openModal() {
@@ -116,7 +124,10 @@ class EventContainer extends Component {
     }
     e.preventDefault();
     this.closeModal();
+    let id = Number(localStorage.count);
+    localStorage.count = Number(localStorage.count) + 1;
     let newEvent = {
+      'id': id,
       'title': this.state.title,
       'text': this.state.text,
       'eventAt': this.state.eventAt
