@@ -48,16 +48,17 @@ input:invalid {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: $carrot;
+  background: $clouds;
   @include easeAll;
 }
+
 .bar {
-	&:before {
+  &:before {
     @include bottomBar;
-		left: 50%;
-	}
-	&:after {
+    left: 50%;
+  }
+  &:after {
     @include bottomBar;
-		right: 50%;
-	}
+    right: 50%;
+  }
 }

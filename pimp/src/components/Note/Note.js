@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 import {
   removeId,
   timestampAt
-} from '../../helpers/helper';
+} from '../../helper';
 
 class Note extends Component {
   constructor(props) {
