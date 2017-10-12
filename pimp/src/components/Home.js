@@ -3,8 +3,6 @@ import EventContainer from "./Event/EventContainer";
 import NoteContainer from './Note/NoteContainer';
 import TodoContainer from './Todo/TodoContainer';
 import ClockContainer from './Clock/ClockContainer';
-import CalendarContainer from "./Calendar/CalendarContainer";
-
 
 class Home extends Component {
   constructor(props){
@@ -15,7 +13,6 @@ class Home extends Component {
   render() {
     return (
       <div id="home">
-        <CalendarContainer/>
         <ClockContainer />
         <div className="container">
           <NoteContainer borderColor="carrot"/>

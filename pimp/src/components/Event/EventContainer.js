@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import Modal from "react-modal";
 import moment from "moment";
 import 'react-datepicker/dist/react-datepicker.css';
+import CalendarContainer from "../Calendar/CalendarContainer";
 
 const modalStyles = {
   content : {
@@ -203,6 +204,7 @@ class EventContainer extends Component {
             button = {formButton}
           />
         </Modal>
+        <CalendarContainer/>
       </div>
     )
   }
