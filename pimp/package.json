@@ -5,7 +5,8 @@
   "main": "src/js/App.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "repository": "https://github.com/IT2810/it2810-webutvikling-h17-prosjekt-3-group-42",
   "author": "IT2810-Group42-H2017",
@@ -32,6 +33,7 @@
     "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "*",
     "html-webpack-plugin": "*",
+    "jest": "^21.2.1",
     "node-sass": "*",
     "react-timestamp": "^4.2.1",
     "sass-loader": "*",
