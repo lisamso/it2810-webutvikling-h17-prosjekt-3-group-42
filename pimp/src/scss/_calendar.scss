@@ -2,7 +2,37 @@
 
 button {
   -webkit-appearance: button-bevel;
-  border-radius: 5px;
   margin: 2px;
-  background-color: $clouds;
+}
+
+.react-calendar {
+  pointer-events: none;
+  // width: 350px;
+  max-width: 100%;
+  background: $wet-asphalt;
+  border: 5px solid $emerald;
+  margin: 0 10px;
+}
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  color: $emerald;
+  font-weight: bold;
+  font-size: .75em;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: 10px;
+}
+.react-calendar__month-view__days__day--weekend {
+  color: $emerald !important;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: $concrete !important;
+}
+.react-calendar__tile {
+  max-width: 100%;
+  text-align: center;
+  padding: .75em .5em;
+  color: $clouds;
+  background: $wet-asphalt;
 }
