@@ -1,6 +1,6 @@
-# PIMp
+# PIMP
 ```
-Personal Information Manager (pro)
+Personal Information Manager PRO
 ```
 
 ## Get started
