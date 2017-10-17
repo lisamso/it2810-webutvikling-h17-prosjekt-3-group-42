@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Note component renders the note correctly 1`] = `
+exports[`Note component should render as expected 1`] = `
 <div
   className="note"
 >
@@ -17,7 +17,6 @@ exports[`Note component renders the note correctly 1`] = `
         placeholder="Title"
         required={true}
         type="text"
-        value={undefined}
       />
       <input
         type="submit"
@@ -36,7 +35,6 @@ exports[`Note component renders the note correctly 1`] = `
         placeholder="Content"
         required={true}
         type="text"
-        value={undefined}
       />
       <span
         className="bar"

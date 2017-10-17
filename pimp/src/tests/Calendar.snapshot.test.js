@@ -1,4 +1,4 @@
-import Note from '../components/Note/Note';
+import CalendarContainer from '../components/Calendar/CalendarContainer';
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { configure } from 'enzyme';
@@ -9,8 +9,8 @@ configure({ adapter: new Adapter() });
 
 
 
-test('Note component should render as expected', () =>{
-  const component = shallow(<Note />);
+test('CalendarContainer component should render as expected', () =>{
+  const component = shallow(<CalendarContainer />);
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
 });

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Event button handles click Delete button clicked 1`] = `
+<div
+  className="event"
+>
+  <h2 />
+  <p>
+    &gt; undefined
+  </p>
+  <div
+    id="event-at"
+  >
+    <hr />
+    <p>
+      The event is on 
+    </p>
+  </div>
+  <button
+    className="someButton"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;
+
+exports[`Event component should render as expected 1`] = `
+<div
+  className="event"
+>
+  <h2 />
+  <p>
+    &gt; undefined
+  </p>
+  <div
+    id="event-at"
+  >
+    <hr />
+    <p>
+      The event is on 
+    </p>
+  </div>
+  <button
+    className="someButton"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</div>
+`;

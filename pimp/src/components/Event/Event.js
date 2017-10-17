@@ -8,6 +8,7 @@ class Event extends Component {
   }
 
   handleDelete() {
+    console.log("Delete!");
     let LS = JSON.parse(
       localStorage.getItem('events'));
     if(LS) {
@@ -35,7 +36,7 @@ class Event extends Component {
           <hr/>
           <p>The event is on {this.props.eventAt}</p>
         </div>
-        <button onClick={this.handleDelete}>Delete</button>
+        <button className="someButton" onClick={this.handleDelete}>Delete</button>
       </div>
     )
   }
