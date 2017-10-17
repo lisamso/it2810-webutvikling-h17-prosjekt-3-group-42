@@ -6,8 +6,8 @@ const monthNames = [
   "July", "August", "September", "October", "November", "December"
 ];
 const weekdays = [
-  "Monday", "Tuesday", "Wednesday",
-  "Thursday", "Friday", "Saturday", "Sunday"
+  "Sunday", "Monday", "Tuesday", "Wednesday",
+  "Thursday", "Friday", "Saturday"
 ];
 
 class ClockContainer extends Component {
@@ -32,7 +32,7 @@ class ClockContainer extends Component {
   
   getWeekday() {
     const weekdayNumber = this.state.date.getDay();
-    return weekdays[weekdayNumber - 1]
+    return weekdays[weekdayNumber]
   }
   
   getDayInMonth() {
