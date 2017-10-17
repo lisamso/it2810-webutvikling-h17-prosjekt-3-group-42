@@ -9,9 +9,9 @@ class Event extends Component {
 
     return(
       <View style={styles.event}>
-        <Text style={styles.event_title}>{this.props.title}</Text>
-        <Text style={styles.event_text}>{this.props.text}</Text>
-        <Text style={styles.event_text}>On {this.props.date}</Text>
+        <Text style={[styles.title, styles.emerald]}>{this.props.title}</Text>
+        <Text style={[styles.text, styles.emerald]}>{this.props.text}</Text>
+        <Text style={[styles.text, styles.emerald]}>On {this.props.date}</Text>
 
       </View>
     )

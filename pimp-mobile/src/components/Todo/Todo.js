@@ -9,7 +9,7 @@ class Todo extends Component {
 
     return(
       <View style={styles.todo}>
-        <Text style={styles.todo_text}>{this.props.text}</Text>
+        <Text style={[styles.text, styles.turquoise]}>{this.props.text}</Text>
       </View>
     )
   }

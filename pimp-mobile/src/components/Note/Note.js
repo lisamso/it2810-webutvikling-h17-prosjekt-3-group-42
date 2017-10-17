@@ -9,8 +9,8 @@ class Note extends Component {
 
     return(
       <View style={styles.note}>
-        <Text style={styles.note_title}>{this.props.title}</Text>
-        <Text style={styles.note_text}>{this.props.text}</Text>
+        <Text style={[styles.title, styles.carrot]}>{this.props.title}</Text>
+        <Text style={[styles.text, styles.carrot]}>{this.props.text}</Text>
       </View>
     )
   }

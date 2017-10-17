@@ -7,13 +7,40 @@ const wet_asphalt = '#34495e';
 const concrete = '#95a5a6';
 
 export const styles = StyleSheet.create({
-  container: {
-    height: 100,
-    alignItems: 'center',
+  carrot: {
+    color: carrot
   },
 
-  text: {
-    color: '#fff'
+  carrot_border: {
+    borderColor: carrot
+  },
+
+  carrot_background: {
+    backgroundColor: carrot
+  },
+
+  turquoise: {
+    color: turquoise
+  },
+
+  turquoise_border: {
+    borderColor: turquoise
+  },
+
+  turquoise_background: {
+    backgroundColor: turquoise
+  },
+
+  emerald: {
+    color: emerald
+  },
+
+  emerald_border: {
+    borderColor: emerald
+  },
+
+  emerald_background: {
+    backgroundColor: emerald
   },
 
   home: {
@@ -39,14 +66,14 @@ export const styles = StyleSheet.create({
     backgroundColor: wet_asphalt
   },
 
-  box_header_carrot: {
+  box_header: {
     padding: 15,
     alignItems: 'center',
     borderColor: carrot,
     borderWidth: 5
   },
 
-  box_body_carrot: {
+  box_body: {
     padding: 10,
     borderColor: carrot,
     borderLeftWidth: 5,
@@ -54,67 +81,10 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 5
   },
 
-  box_button_carrot: {
+  box_button: {
     backgroundColor: carrot,
     height: 40,
     alignItems: 'center'
-  },
-
-  box_header_turquoise: {
-    padding: 15,
-    alignItems: 'center',
-    borderColor: turquoise,
-    borderWidth: 5
-  },
-
-  box_body_turquoise: {
-    padding: 10,
-    borderColor: turquoise,
-    borderLeftWidth: 5,
-    borderRightWidth: 5,
-    borderBottomWidth: 5
-  },
-
-  box_button_turquoise: {
-    backgroundColor: turquoise,
-    height: 40,
-    alignItems: 'center'
-  },
-
-  box_header_emerald: {
-    padding: 15,
-    alignItems: 'center',
-    borderColor: emerald,
-    borderWidth: 5
-  },
-
-  box_body_emerald: {
-    padding: 10,
-    borderColor: emerald,
-    borderLeftWidth: 5,
-    borderRightWidth: 5,
-    borderBottomWidth: 5
-  },
-
-  box_button_emerald: {
-    backgroundColor: emerald,
-    height: 40,
-    alignItems: 'center'
-  },
-
-  carrot: {
-    color: carrot,
-    fontSize: 20,
-  },
-
-  turquoise: {
-    color: turquoise,
-    fontSize: 20,
-  },
-
-  emerald: {
-    color: emerald,
-    fontSize: 20,
   },
 
   wet_asphalt: {
@@ -141,6 +111,33 @@ export const styles = StyleSheet.create({
     flexDirection: 'row'
   },
 
+  container: {
+    flex: 4,
+    paddingTop: 5,
+    paddingBottom: 10,
+    borderBottomWidth: 2,
+  },
+
+  delete_border: {
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 50
+  },
+
+  delete_text: {
+    fontSize: 30,
+  },
+
+  text: {
+    fontSize: 15
+  },
+
+  title: {
+    fontSize: 20
+  },
+
   note_title: {
     fontSize: 20,
     color: carrot
@@ -148,29 +145,6 @@ export const styles = StyleSheet.create({
 
   note_text: {
     fontSize: 15,
-    color: carrot
-  },
-
-  note_container: {
-    flex: 4,
-    paddingTop: 5,
-    paddingBottom: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: carrot
-  },
-
-
-  note_delete: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    borderColor: carrot,
-    borderWidth: 2,
-    borderRadius: 50
-  },
-
-  note_delete_text: {
-    fontSize: 30,
     color: carrot
   },
 
@@ -184,29 +158,6 @@ export const styles = StyleSheet.create({
     color: turquoise
   },
 
-  todo_container: {
-    flex: 4,
-    paddingTop: 5,
-    paddingBottom: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: turquoise
-  },
-
-
-  todo_delete: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    borderColor: turquoise,
-    borderWidth: 2,
-    borderRadius: 50
-  },
-
-  todo_delete_text: {
-    fontSize: 30,
-    color: turquoise
-  },
-
   event_title: {
     fontSize: 20,
     color: emerald
@@ -214,29 +165,6 @@ export const styles = StyleSheet.create({
 
   event_text: {
     fontSize: 15,
-    color: emerald
-  },
-
-  event_container: {
-    flex: 4,
-    paddingTop: 5,
-    paddingBottom: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: emerald
-  },
-
-
-  event_delete: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    borderColor: emerald,
-    borderWidth: 2,
-    borderRadius: 50
-  },
-
-  event_delete_text: {
-    fontSize: 30,
     color: emerald
   },
 

@@ -78,15 +78,15 @@ class EventContainer extends Component {
     return(
       this.state.events.map((n,idx) =>
         <View style={styles.row_box} key={idx}>
-          <View style={styles.event_container}>
+          <View style={[styles.container, styles.emerald_border]}>
             {n}
           </View>
           <TouchableNativeFeedback
             onPress={() => { this.removeEvent(n.props.id)}}
           >
             <View style={styles.delete_container}>
-              <View style={styles.event_delete}>
-                <Text style={styles.event_delete_text}>x</Text>
+              <View style={[styles.delete_border, styles.emerald_border]}>
+                <Text style={[styles.delete_text, styles.emerald]}>x</Text>
               </View>
             </View>
           </TouchableNativeFeedback>
@@ -97,15 +97,15 @@ class EventContainer extends Component {
   render(){
     return(
       <View style={styles.box}>
-        <View style={styles.box_header_emerald}>
-          <Text style={styles.emerald}>Your Events</Text>
+        <View style={[styles.box_header, styles.emerald_border]}>
+          <Text style={[styles.title, styles.emerald]}>Your Events</Text>
         </View>
-        <View style={styles.box_body_emerald}>
+        <View style={[styles.box_body, styles.emerald_border]}>
           {this.allEvents()}
         </View>
         <TouchableNativeFeedback
           onPress={() => { this.toggleModal()}}>
-          <View style={styles.box_button_emerald}>
+          <View style={[styles.box_button, styles.emerald_background]}>
             <Text style={styles.wet_asphalt}>
               New event
             </Text>
@@ -122,10 +122,10 @@ class EventContainer extends Component {
           onBackButtonPress={() => {this.toggleModal()}}
         >
           <View style={styles.box}>
-            <View style={styles.box_header_emerald}>
-              <Text style={styles.emerald}>New event</Text>
+            <View style={[styles.box_header, styles.emerald_border]}>
+              <Text style={[styles.title, styles.emerald]}>New event</Text>
             </View>
-            <View style={styles.box_body_emerald}>
+            <View style={[styles.box_body, styles.emerald_border]}>
               <TextInput
                 style={{height: 60, color: '#2ecc71'}}
                 placeholder="Title"
@@ -164,7 +164,7 @@ class EventContainer extends Component {
             </View>
             <TouchableNativeFeedback
               onPress={() => {this.submitEvent()}}>
-              <View style={styles.box_button_emerald}>
+              <View style={[styles.box_button, styles.emerald_background]}>
                 <Text style={styles.wet_asphalt}>
                   Confirm
                 </Text>
