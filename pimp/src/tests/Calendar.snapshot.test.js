@@ -14,3 +14,14 @@ test('CalendarContainer component should render as expected', () =>{
   const tree = toJson(component);
   expect(tree).toMatchSnapshot();
 });
+describe('Test the functions of the CalendarContainer component.', () =>{
+
+  it('', () =>{
+    const component = shallow(<CalendarContainer />);
+    const tree = toJson(component);
+    const c = component.find('Calendar');
+
+  });
+
+
+});
