@@ -1,5 +1,4 @@
 import Note from '../components/Note/Note';
-import NoteContainer from '../components/Note/NoteContainer';
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { configure } from 'enzyme';
@@ -33,11 +32,6 @@ describe('Test the functions of the Note component.', () =>{
     const text = component.find('#tekstid');
     text.simulate('change', { target: { value: 'Hello' } });
     expect(component.state().text).toBe('Hello');
-  });
-
-  it('', () =>{
-    NoteContainer.newNote('tittel', 'tekst');
-    
   });
 
 });
