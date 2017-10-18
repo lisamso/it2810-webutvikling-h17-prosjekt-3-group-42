@@ -58,7 +58,6 @@ class Note extends Component {
   }
 
   handleSubmit(e) {
-    console.log("submitted");
     let editedAt = this.state.timestamp.props['time']
     e.preventDefault()
     if (this.state.textFocused){
@@ -90,7 +89,6 @@ class Note extends Component {
           onSubmit={this.handleSubmit}>
           <div className='group'>
             <input
-              id='tittelid'
               type='text'
               required
               name='title'
@@ -99,12 +97,11 @@ class Note extends Component {
               onChange={this.handleTitleChange}
               value={this.state.title}
             />
-            <input id="submitid" type='submit' value='submit'/>
+            <input type='submit' value='submit'/>
             <span className='bar'></span>
           </div>
           <div className='group'>
             <input
-              id='tekstid'
               type='text'
               required
               name='content'

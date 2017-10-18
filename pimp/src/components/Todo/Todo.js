@@ -44,4 +44,3 @@ TodoList.propTypes = {
   remove: PropTypes.func
 };
 
-export default Todo;
