@@ -15,39 +15,39 @@ class ClockContainer extends Component {
     super(props);
     this.state = {date: new Date()};
   }
-  
+
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
-  
+
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
-  
+
   tick() {
     this.setState({
       date: new Date()
     });
   }
-  
+
   getWeekday() {
     const weekdayNumber = this.state.date.getDay();
     return weekdays[weekdayNumber]
   }
-  
+
   getDayInMonth() {
     return this.state.date.getDate();
   }
-  
+
   getMonth() {
     const monthNumber = this.state.date.getMonth();
     return monthNames[monthNumber];
   }
-  
+
   getHours() {
     return this.state.date.getHours();
   }
-  
+
   getMinutes() {
     let minutes = this.state.date.getMinutes();
     if (minutes < 10) {
@@ -55,7 +55,7 @@ class ClockContainer extends Component {
     }
     return minutes.toString();
   }
-  
+
   getSeconds() {
     let sec = this.state.date.getSeconds();
     if (sec < 10) {
@@ -63,7 +63,7 @@ class ClockContainer extends Component {
     }
     return sec.toString();
   }
-  
+
   render() {
     return (
       <Clock
