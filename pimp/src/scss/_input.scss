@@ -14,7 +14,14 @@ input {
     color: $concrete;
   }
   &[type~='submit']{
-    display: none;
+    &:hover{
+      cursor: pointer;
+    }
+    // display: none;
+    position: absolute;
+    right: -$border-size;
+    text-align: right;
+    width: auto;
   }
   &[name~='title'] {
     font-size: 18px;

@@ -101,7 +101,7 @@ class TodoContainer extends Component {
               autoComplete='off'
               onChange={this.handleChange}/>
             <span className='bar'></span>
-            <input type='submit' value='submit'/>
+            <input type='submit' value=''/>
           </form>
         </div>
         <div className='group'>
@@ -111,11 +111,9 @@ class TodoContainer extends Component {
       </div>
 
 
-    // const addNewTodoButton = <button
-    //   onClick={this.handleSubmit}
-    // >
-    //   Add a new Todo
-    // </button>
+    const addNewTodoButton = <button>
+      Add a new Todo
+    </button>
     // add 'button={addNewTodoButton}' in return to show the button
 
     return (
@@ -124,6 +122,7 @@ class TodoContainer extends Component {
           color = {this.props.borderColor}
           name = 'Todos'
           obj = {[todoForm]}
+          button = {addNewTodoButton}
         />
       </div>
     )
